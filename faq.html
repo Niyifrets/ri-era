@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RI-ERA'S Kitchen — FAQ | Akwa-Ibom</title>
+
+    <meta name="description" content="Frequently asked questions about RI-ERA'S Kitchen in Akwa-Ibom, Nigeria.">
+    <meta name="theme-color" content="#D4AF37">
+
+    <link rel="icon" href="logo-dark.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header class="site-header" data-aos="fade-down" data-aos-duration="800">
+        <div class="container header-inner">
+
+            <a href="index.html" class="brand" aria-label="RI-ERA'S Kitchen Home">
+                <img src="logo-dark.png" alt="RI-ERA'S Kitchen" class="brand-logo">
+            </a>
+
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="menu.html" class="nav-link">Menu</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="faq.html" class="nav-link active">FAQ</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <button type="button" class="cart-button" id="cartButton" aria-label="Open shopping cart" title="Shopping cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+
+                <button type="button" class="mobile-menu-button" id="mobileMenuButton" aria-label="Open navigation menu" aria-expanded="false" title="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- =====================================================
+         MOBILE NAVIGATION
+    ====================================================== -->
+
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main>
+
+        <!-- =================================================
+             FAQ PAGE HEADER
+        ================================================== -->
+
+        <section class="page-header" data-aos="fade-up" data-aos-duration="800">
+            <div class="container">
+                <h1>Frequently Asked <span>Questions</span></h1>
+                <p>Find answers to the most common questions about RI-ERA'S Kitchen.</p>
+            </div>
+        </section>
+
+        <!-- =================================================
+             FAQ CONTENT
+        ================================================== -->
+
+        <section class="faq-section">
+            <div class="container">
+
+                <div class="faq-list" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>How do I place an order?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>You can place an order through our website by browsing our menu, adding items to your cart, and proceeding to checkout. You'll need to provide your name, phone number, and delivery address.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What areas do you deliver to?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We currently deliver across Akwa-Ibom and surrounding areas. For specific locations, please contact us to confirm delivery availability.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>How long does delivery take?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Delivery typically takes 30-60 minutes depending on your location and order volume. We strive to deliver your meals fresh and hot!</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Do you accept special dietary requests?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! We're happy to accommodate dietary requirements. Please include any special requests in the notes section when placing your order, or contact us directly.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What payment methods do you accept?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We accept cash on delivery and bank transfers. Payment details will be provided when you place your order.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Can I cancel or modify my order?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>You can cancel or modify your order within 10 minutes of placing it. Please contact us directly for any changes.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Do you cater for events?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! We offer catering services for events, parties, and gatherings. Please contact us to discuss your event requirements.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What are your operating hours?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We're open from 8:00 AM to 10:00 PM, Monday through Sunday. Order early for the best selection!</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =================================================
+             CTA SECTION
+        ================================================== -->
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content" data-aos="zoom-in" data-aos-duration="1000">
+                    <h2>Still have <span>questions?</span></h2>
+                    <p>We're here to help! Contact us directly and we'll get back to you.</p>
+                    <a href="contact.html" class="primary-button">Contact Us <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =====================================================
+         CART OVERLAY
+    ====================================================== -->
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- =====================================================
+         CART DRAWER
+    ====================================================== -->
+
+    <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+
+        <div class="cart-header">
+            <div>
+                <span class="eyebrow">YOUR ORDER</span>
+                <h2>Your Cart</h2>
+            </div>
+            <button type="button" id="closeCart" class="close-button" aria-label="Close shopping cart">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="cart-items" id="cartItems"></div>
+
+        <div class="cart-empty" id="cartEmpty">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <h3>Your cart is empty</h3>
+            <p>Add something delicious from our menu.</p>
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <strong id="cartTotal">₦0</strong>
+            </div>
+            <button type="button" class="primary-button checkout-button" id="checkoutButton" disabled>
+                Proceed to Checkout <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+
+    </aside>
+
+    <!-- =====================================================
+         FOOD DETAILS MODAL
+    ====================================================== -->
+
+    <div class="food-modal" id="foodModal" aria-hidden="true">
+        <div class="food-modal-content">
+
+            <button type="button" class="modal-close" id="closeFoodModal" aria-label="Close food details">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="food-modal-image" id="foodModalImage"></div>
+
+            <div class="food-modal-info">
+                <span class="food-modal-category" id="foodModalCategory"></span>
+                <h2 id="foodModalName"></h2>
+                <p id="foodModalDescription"></p>
+
+                <div class="food-modal-bottom">
+                    <strong id="foodModalPrice">₦0</strong>
+                    <div class="quantity-control">
+                        <button type="button" id="decreaseQuantity" aria-label="Decrease quantity">−</button>
+                        <span id="foodQuantity">1</span>
+                        <button type="button" id="increaseQuantity" aria-label="Increase quantity">+</button>
+                    </div>
+                </div>
+
+                <button type="button" class="primary-button add-to-cart-button" id="addToCartButton">
+                    Add to Cart <i class="fa-solid fa-bag-shopping"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- =====================================================
+         CHECKOUT MODAL
+    ====================================================== -->
+
+    <div class="checkout-modal" id="checkoutModal" aria-hidden="true">
+        <div class="checkout-content">
+
+            <div class="checkout-header">
+                <div>
+                    <span class="eyebrow">CHECKOUT</span>
+                    <h2>Complete your order</h2>
+                </div>
+                <button type="button" class="modal-close" id="closeCheckout" aria-label="Close checkout">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <form id="checkoutForm" class="checkout-form">
+
+                <div class="form-group">
+                    <label for="customerName">Your Name</label>
+                    <input type="text" id="customerName" name="customerName" placeholder="Enter your name" autocomplete="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="customerPhone">Phone Number</label>
+                    <input type="tel" id="customerPhone" name="customerPhone" placeholder="08012345678" autocomplete="tel" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="customerAddress">Delivery Address</label>
+                    <textarea id="customerAddress" name="customerAddress" rows="3" placeholder="Enter your complete delivery address (Akwa-Ibom)" autocomplete="street-address" required></textarea>
+                </div>
+
+                <div class="checkout-summary">
+                    <div>
+                        <span>Order Total</span>
+                        <strong id="checkoutTotal">₦0</strong>
+                    </div>
+                </div>
+
+                <button type="submit" class="primary-button checkout-submit" id="placeOrderButton">
+                    Place Order <i class="fa-solid fa-check"></i>
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+
+    <!-- =====================================================
+         TOAST NOTIFICATIONS
+    ====================================================== -->
+
+    <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+
+            <div class="footer-brand">
+                <img src="logo-dark.png" alt="RI-ERA'S Kitchen" class="footer-logo">
+                <p>Homemade food, made with love in Akwa-Ibom.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter" class="social-link"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="YouTube" class="social-link"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" aria-label="TikTok" class="social-link"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-links-column">
+                    <h4>Quick Links</h4>
+                    <a href="menu.html">Menu</a>
+                    <a href="about.html">About</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-links-column">
+                    <h4>Contact</h4>
+                    <a href="tel:+2348000000000"><i class="fa-solid fa-phone"></i> +234 800 000 0000</a>
+                    <a href="mailto:info@ri-eras-kitchen.com"><i class="fa-solid fa-envelope"></i> info@ri-eras-kitchen.com</a>
+                    <a href="#"><i class="fa-solid fa-location-dot"></i> Akwa-Ibom, Nigeria</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="copyright">© 2026 RI-ERA'S Kitchen. All rights reserved.</p>
+                <div class="footer-payment-icons">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-cc-paypal"></i>
+                    <i class="fa-brands fa-cc-apple-pay"></i>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            disable: 'mobile'
+        });
+    </script>
+
+    <script type="module" src="script.js"></script>
+
+</body>
+</html>

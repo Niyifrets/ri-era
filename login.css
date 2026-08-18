@@ -1,0 +1,151 @@
+/* ============================================================
+   RI-ERA'S KITCHEN - LOGIN PAGE
+   LUXURY GOLD THEME - DARK ONLY
+   ============================================================ */
+
+:root {
+    --bg-primary: #050505;
+    --bg-secondary: #0B0B0B;
+    --bg-surface: #111111;
+    --gold: #D4AF37;
+    --gold-bright: #F5C451;
+    --gold-deep: #A66A00;
+    --cream: #F8F5EE;
+    --text-primary: #F8F5EE;
+    --text-muted: #8A857A;
+    --border: rgba(212, 175, 55, 0.2);
+    --shadow-gold: 0 8px 30px rgba(212, 175, 55, 0.15);
+    --shadow-lg: 0 25px 70px rgba(0, 0, 0, 0.7);
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-image: radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.03), transparent 50%),
+                      radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.03), transparent 50%);
+}
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+}
+
+.login-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 40px 32px;
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+}
+
+.login-logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    object-fit: contain;
+    border: 2px solid var(--border);
+    padding: 8px;
+}
+
+.login-card h1 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 4px;
+    background: linear-gradient(135deg, var(--gold-deep), var(--gold), var(--gold-bright));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.login-card p {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.input-group input {
+    width: 100%;
+    height: 46px;
+    padding: 0 14px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text-primary);
+    font-size: 14px;
+    transition: all var(--transition);
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+}
+
+.input-group input::placeholder {
+    color: var(--text-muted);
+}
+
+button[type="submit"] {
+    width: 100%;
+    height: 46px;
+    border: 0;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--gold-deep), var(--gold), var(--gold-bright));
+    color: var(--bg-primary);
+    font-size: 14px;
+    font-weight: 700;
+    transition: all var(--transition);
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold);
+}
+
+button[type="submit"]:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+#loginMessage {
+    margin-top: 14px;
+    font-size: 12px;
+    min-height: 20px;
+    color: var(--gold);
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 30px 20px;
+    }
+}
