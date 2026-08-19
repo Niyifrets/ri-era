@@ -152,11 +152,33 @@ function listenForFoods() {
             
             // Check if both foods and categories are loaded
             checkAndRender();
+            
+            // Render featured foods on homepage
+            const featuredContainer = byId("featuredGrid");
+            if (featuredContainer) {
+                renderFeaturedFoods();
+            }
         },
         error => {
             console.error("Foods loading error:", error);
             hideLoading();
             showToast("Unable to load menu", "Please refresh the page and try again.", "error");
+            
+            // Show error in featured section too
+            const featuredContainer = byId("featuredGrid");
+            const loading = byId("featuredLoading");
+            if (loading) {
+                loading.style.display = "none";
+                loading.hidden = true;
+            }
+            if (featuredContainer) {
+                featuredContainer.innerHTML = `
+                    <div class="empty-state" style="grid-column: 1 / -1; padding: 40px; text-align: center;">
+                        <i class="fa-solid fa-circle-exclamation" style="font-size: 30px; color: var(--danger);"></i>
+                        <p style="color: var(--text-muted); margin-top: 10px;">Unable to load menu. Please refresh the page.</p>
+                    </div>
+                `;
+            }
         }
     );
 }
@@ -964,11 +986,42 @@ function listenForFeaturedFoods() {
         return;
     }
 
-    // Use the foods listener data, just filter for featured
-    // We'll render featured items after foods load
+    // Initial render after a short delay to ensure foods are loaded
     setTimeout(() => {
         renderFeaturedFoods();
-    }, 1000);
+    }, 500);
+
+    // Also re-render when foods change (the foods listener already handles this)
+    // We'll use a setInterval to check periodically until foods are loaded
+    let attempts = 0;
+    const maxAttempts = 10;
+    
+    const checkAndRender = setInterval(() => {
+        attempts++;
+        if (foods.length > 0) {
+            renderFeaturedFoods();
+            clearInterval(checkAndRender);
+        } else if (attempts >= maxAttempts) {
+            // Show empty state after max attempts
+            const container = byId("featuredGrid");
+            const loading = byId("featuredLoading");
+            
+            if (loading) {
+                loading.style.display = "none";
+                loading.hidden = true;
+            }
+            
+            if (container) {
+                container.innerHTML = `
+                    <div class="empty-state" style="grid-column: 1 / -1; padding: 40px; text-align: center;">
+                        <i class="fa-solid fa-utensils" style="font-size: 30px; color: var(--text-muted);"></i>
+                        <p style="color: var(--text-muted); margin-top: 10px;">No menu items available. Check back soon!</p>
+                    </div>
+                `;
+            }
+            clearInterval(checkAndRender);
+        }
+    }, 500);
 }
 
 function renderFeaturedFoods() {
@@ -977,27 +1030,57 @@ function renderFeaturedFoods() {
 
     if (!container) return;
 
+    // Hide loading
     if (loading) {
         loading.style.display = "none";
         loading.hidden = true;
     }
 
+    // Get available foods
+    const availableFoods = foods.filter(food => food.available !== false);
+    
     // Get 4 random foods or first 4
-    const featured = foods.length > 4 ? 
-        foods.sort(() => 0.5 - Math.random()).slice(0, 4) : 
-        foods.slice(0, 4);
+    const featured = availableFoods.length > 4 ? 
+        [...availableFoods].sort(() => 0.5 - Math.random()).slice(0, 4) : 
+        availableFoods.slice(0, 4);
 
     if (!featured.length) {
         container.innerHTML = `
-            <div class="empty-state" style="grid-column: 1 / -1; padding: 40px;">
+            <div class="empty-state" style="grid-column: 1 / -1; padding: 40px; text-align: center;">
                 <i class="fa-solid fa-utensils" style="font-size: 30px; color: var(--text-muted);"></i>
-                <p style="color: var(--text-muted); margin-top: 10px;">No menu items available.</p>
+                <p style="color: var(--text-muted); margin-top: 10px;">No menu items available. Check back soon!</p>
             </div>
         `;
         return;
     }
 
     container.innerHTML = featured.map(createFeaturedCard).join("");
+    
+    // Attach click events to featured food cards
+    container.querySelectorAll(".food-card").forEach(card => {
+        card.addEventListener("click", (event) => {
+            if (event.target.closest(".food-card-button")) return;
+            const foodId = card.dataset.foodId;
+            if (foodId) {
+                // Find the food in the foods array
+                const food = foods.find(item => item.id === foodId);
+                if (food) {
+                    openFoodModal(foodId);
+                }
+            }
+        });
+    });
+
+    // Attach click events to featured food buttons
+    container.querySelectorAll(".food-card-button").forEach(button => {
+        button.addEventListener("click", (event) => {
+            event.stopPropagation();
+            const foodId = button.dataset.id;
+            if (foodId) {
+                openFoodModal(foodId);
+            }
+        });
+    });
 }
 
 function createFeaturedCard(food) {
@@ -1092,7 +1175,9 @@ function showToast(title, message, type = "success") {
         ? "fa-circle-exclamation"
         : type === "warning"
             ? "fa-triangle-exclamation"
-            : "fa-circle-check";
+            : type === "info"
+                ? "fa-circle-info"
+                : "fa-circle-check";
 
     toast.innerHTML = `
         <div class="toast-icon">
